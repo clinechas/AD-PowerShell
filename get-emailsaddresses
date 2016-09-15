@@ -1,0 +1,3 @@
+#Get Users display name, email address, and title
+Get-ADUser -Filter * -Properties DisplayName, EmailAddress, Title | select DisplayName, EmailAddress, Title 
+| Export-CSV "C:\_Scripts\Email_Addresses.csv"
