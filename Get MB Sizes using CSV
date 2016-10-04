@@ -1,0 +1,2 @@
+#Make sure csv has Name as header column
+Import-Csv “c:\_Scripts\wolfspeed_users.csv” | ForEach-Object -Process {Get-Mailboxstatistics $_.Name | Select-Object DisplayName, ItemCount, TotalItemSize} | Export-CSV “c:\_scripts\mbstats.csv” -notype
