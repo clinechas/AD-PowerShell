@@ -1,2 +1,6 @@
 #Make sure csv has Name as header column
+Set-ExecutionPolicy RemoteSigned
+$UserCredential = Get-Credential
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+Import-PSSession $Session
 Import-Csv “c:\_Scripts\wolfspeed_users.csv” | ForEach-Object -Process {Get-Mailboxstatistics $_.Name | Select-Object DisplayName, ItemCount, TotalItemSize} | Export-CSV “c:\_scripts\mbstats.csv” -notype
