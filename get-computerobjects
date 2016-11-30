@@ -1,0 +1,2 @@
+Get-ADComputer -Filter * -Properties * | Select-Object Name,OperatingSystem,OperatingSystemServicePack,LastLogonDate
+| Export-CSV c:\_scripts\computer_objects11302016.csv -NoTypeInformation -Encoding UTF8
