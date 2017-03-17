@@ -1,2 +1,2 @@
 import-module activedirectory
-Get-ADUser -filter * -property * | ft name, lastlogondate | Export-Csv C:\_Scripts\lastlogondate_03172017.csv
+Get-ADUser -filter * -Properties name,enabled,lastlogondate | select name,enabled,lastLogondate | export-csv C:\_Scripts\lastlogondate_03172017.csv
