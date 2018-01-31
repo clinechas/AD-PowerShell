@@ -40,3 +40,5 @@ foreach ($DomainController in $DomainControllers)
   "Domain Controller: " + $DomainController.name + ", Response time: " + $totalmeasurement + " seconds"
 
 }
+#Output the array to the CSV File
+$Output | Export-Csv C:\_Scripts\DCLDAPResponse.csv
