@@ -42,3 +42,5 @@ foreach ($DomainController in $DomainControllers)
 }
 #Output the array to the CSV File
 $Output | Export-Csv C:\_Scripts\DCLDAPResponse.csv
+
+#Or use $psise.CurrentPowerShellTab.ConsolePane.Text | Set-Content -Path C:\_scripts\dcldapresponse.log
