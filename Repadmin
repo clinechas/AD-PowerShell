@@ -1,0 +1,9 @@
+$date = Get-Date
+
+$date1 = $date.ToString("dd-MM-yyyy")
+
+$path = "C:\_Scripts"
+
+$directory = New-Item -ItemType directory -Path "$path\$date1"
+
+$Report = repadmin /replsummary /bysrc /bydest /sort:delta > $directory\ReplicationReport.txt
