@@ -1,0 +1,1 @@
+Get-ADObject -SearchBase "OU=GALSync, DC=domain, DC=test, DC=com" -Filter 'objectClass -eq "contact"' -properties * | export-csv C:\_Scripts\galsync_02132018.csv
