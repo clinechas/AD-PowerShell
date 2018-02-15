@@ -1,0 +1,2 @@
+Search-ADAccount -AccountInactive -TimeSpan "180" -UsersOnly | %{Get-ADUser $_.ObjectGuid  -Properties Name,enabled,LastLogonDate,PasswordExpired,PasswordNeverExpires,CanonicalName }|
+select Name,enabled,LastLogonDate,PasswordExpired,PasswordNeverExpires,CanonicalName | export-csv c:\_scripts\lastlogon_02152018.csv
